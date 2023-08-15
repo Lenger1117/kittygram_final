@@ -4,7 +4,6 @@ volumes:
   pg_data_production:
   static_volume:
   media_volume:
-
 services:
   db:
     image: postgres:13
@@ -13,17 +12,17 @@ services:
       - pg_data_production:/var/lib/postgresql/data
 
   backend:
-    build: ./backend/
+    image: lenger1117/kittygram_backend
     env_file: .env
     depends_on:
       - db
     volumes:
-      - static_volume:/app/backend_static/
+      - static_volume:/backend_static/
       - media_volume:/app/media/
 
   frontend:
     env_file: .env
-    build: ./frontend/
+    image: lenger1117/kittygram_frontend
     depends_on:
       - backend
     command: cp -r /app/build/. /static/
@@ -31,7 +30,7 @@ services:
       - static_volume:/static/
 
   gateway:
-    build: ./nginx/
+    image: lenger1117/kittygram_gateway
     env_file: .env
     depends_on:
       - backend
