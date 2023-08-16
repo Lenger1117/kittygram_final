@@ -1,26 +1,37 @@
-#  Как работать с репозиторием финального задания
+<h2>Описание:</h2>
+Kittygram — социальная сеть для обмена фотографиями любимых питомцев.
+<br>
+<br>
+<h2>Установка:</h2>
+<h3>Клонировать репозиторий и перейти в него в командной строке:</h3>
+<ul>
+<li>git clone git@github.com:Lenger1117/kittygram_final.git</li>
+<li>cd infra_sprint1/</li>
+</ul>
 
-## Что нужно сделать
+<h3>Cоздать и активировать виртуальное окружение:</h3>
+<ul>
+<li>python3 -m venv venv</li>
+<li>source venv/bin/activate/</li>
+</ul>
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+<h3>Установить зависимости из файла requirements.txt:</h3>
+<ul>
+<li>python3 -m pip install --upgrade pip</li>
+<li>pip install -r requirements.txt</li>
+</ul>
 
-## Как проверить работу с помощью автотестов
+<h3>Выполнить миграции:</h3>
+<ul>
+<li>python manage.py migrate</li>
+</ul>
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
-```
-
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
-
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
-
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+<h3>Запустить проект:</h3>
+<ul>
+<li>python manage.py runserver 0:9000</li>
+</ul>
+<br>
+<h2>Где можно посмотреть развернутый проект:</h2>
+<ul>
+<li>https://lenger1117.hopto.org</li>
+</ul>
