@@ -1,5 +1,6 @@
 from cats.views import AchievementViewSet, CatViewSet
-# я не буду менять импорты, т.к. если я импорт выше ставлю в любое другое место, то flake8 ругается
+# я не буду менять импорты, т.к. если я импорт выше ставлю
+# в любое другое место, то flake8 ругается
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
